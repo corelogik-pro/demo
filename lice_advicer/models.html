@@ -1,0 +1,1662 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <meta name="description" content="Chandrakala Cheman Sahu — Experienced LIC Financial Advisor. Free consultation for life insurance, retirement planning, and investment solutions." />
+  <title>Chandrakala Cheman Sahu — Premium LIC Financial Advisor</title>
+  
+  <!-- SEO Optimization -->
+  <meta name="robots" content="index, follow">
+  <meta name="keywords" content="LIC advisor, life insurance, retirement planning, investment solutions, financial advisor, Chandrakala Cheman Sahu">
+  <meta property="og:title" content="Chandrakala Cheman Sahu — Premium LIC Financial Advisor">
+  <meta property="og:description" content="Experienced LIC Financial Advisor offering free consultation for life insurance, retirement planning, and investment solutions.">
+  <meta property="og:type" content="website">
+  <meta property="og:image" content="https://images.unsplash.com/photo-1551836022-d5d88e9218df?q=80&w=1200&auto=format&fit=crop&ixlib=rb-4.0.3&s=6b3f8c5e7d8b6d8c6c1b1b3f3d9a8c6d">
+  <meta property="og:url" content="https://www.chandrakalacheman.com">
+  <meta name="twitter:card" content="summary_large_image">
+  
+  <!-- Favicon -->
+  <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+  <link rel="manifest" href="/site.webmanifest">
+  
+  <!-- Preconnect for external resources -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  
+  <!-- Preload critical resources -->
+  <link rel="preload" href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Playfair+Display:wght@700&display=swap" as="style">
+  <link rel="preload" href="https://unpkg.com/gsap@3/dist/gsap.min.js" as="script">
+  <link rel="preload" href="https://unpkg.com/gsap@3/dist/ScrollTrigger.min.js" as="script">
+  
+  <!-- Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Playfair+Display:wght@700&display=swap" rel="stylesheet">
+  
+  <!-- Font Awesome for icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+  
+  <style>
+    /* CSS variables */
+    :root {
+      --accent: #004aad;
+      --accent-2: #0077ff;
+      --accent-light: #e6f0ff;
+      --warm: #ffcc00;
+      --warm-light: #fff9e6;
+      --muted: #6b7280;
+      --light: #f8fafc;
+      --dark: #0f172a;
+      --success: #10b981;
+      --border: #e2e8f0;
+      --shadow-sm: 0 1px 2px rgba(0,0,0,0.05);
+      --shadow-md: 0 4px 6px rgba(0,0,0,0.05), 0 1px 3px rgba(0,0,0,0.05);
+      --shadow-lg: 0 10px 15px -3px rgba(0,0,0,0.05), 0 4px 6px -2px rgba(0,0,0,0.05);
+      --radius-sm: 8px;
+      --radius-md: 12px;
+      --radius-lg: 16px;
+      --radius-xl: 24px;
+      --transition: all 0.3s ease;
+    }
+    
+    /* Global styles */
+    *, *::before, *::after {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+    
+    body {
+      font-family: 'Poppins', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+      background: var(--light);
+      color: var(--dark);
+      line-height: 1.6;
+      overflow-x: hidden;
+      text-rendering: optimizeLegibility;
+      -webkit-font-smoothing: antialiased;
+    }
+    
+    h1, h2, h3, h4 {
+      font-family: 'Playfair Display', Georgia, serif;
+      font-weight: 700;
+      line-height: 1.2;
+    }
+    
+    a {
+      text-decoration: none;
+      color: inherit;
+      transition: var(--transition);
+    }
+    
+    img {
+      max-width: 100%;
+      height: auto;
+    }
+    
+    .container {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 24px;
+    }
+    
+    section {
+      padding: 80px 0;
+    }
+    
+    .section-title {
+      text-align: center;
+      margin-bottom: 48px;
+    }
+    
+    .section-title h2 {
+      font-size: 36px;
+      margin-bottom: 16px;
+      position: relative;
+      display: inline-block;
+    }
+    
+    .section-title h2::after {
+      content: '';
+      position: absolute;
+      bottom: -8px;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 80px;
+      height: 4px;
+      background: linear-gradient(90deg, var(--accent), var(--accent-2));
+      border-radius: 2px;
+    }
+    
+    .section-title p {
+      color: var(--muted);
+      max-width: 700px;
+      margin: 0 auto;
+    }
+    
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
+      padding: 14px 28px;
+      border-radius: var(--radius-xl);
+      font-weight: 600;
+      text-decoration: none;
+      transition: var(--transition);
+      cursor: pointer;
+      border: none;
+      font-size: 16px;
+      white-space: nowrap;
+      position: relative;
+      overflow: hidden;
+    }
+    
+    .btn::after {
+      content: '';
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      width: 0;
+      height: 0;
+      background: rgba(255, 255, 255, 0.2);
+      border-radius: 50%;
+      transform: translate(-50%, -50%);
+      transition: width 0.4s ease, height 0.4s ease;
+    }
+    
+    .btn:hover::after {
+      width: 300px;
+      height: 300px;
+    }
+    
+    .btn:focus {
+      outline: 2px solid var(--accent-2);
+      outline-offset: 2px;
+    }
+    
+    .btn-primary {
+      background: linear-gradient(90deg, var(--accent), var(--accent-2));
+      color: #fff;
+      box-shadow: var(--shadow-md);
+    }
+    
+    .btn-primary:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 10px 20px rgba(0, 74, 173, 0.2);
+    }
+    
+    .btn-secondary {
+      background: #fff;
+      color: var(--accent);
+      border: 2px solid var(--accent);
+    }
+    
+    .btn-secondary:hover {
+      background: var(--accent-light);
+    }
+    
+    .btn-whatsapp {
+      background: #25d366;
+      color: #fff;
+    }
+    
+    .btn-whatsapp:hover {
+      background: #128C7E;
+      transform: translateY(-2px);
+    }
+    
+    /* Header */
+    header {
+      background: linear-gradient(135deg, #0f172a 0%, #1e293b 100%);
+      color: white;
+      padding: 16px 0;
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+      box-shadow: var(--shadow-md);
+    }
+    
+    .header-container {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+    
+    .logo {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      font-weight: 700;
+      font-size: 20px;
+    }
+    
+    .logo-icon {
+      color: var(--accent-2);
+    }
+    
+    nav ul {
+      display: flex;
+      gap: 32px;
+      list-style: none;
+    }
+    
+    nav a {
+      font-weight: 500;
+      transition: var(--transition);
+      position: relative;
+      padding: 8px 0;
+    }
+    
+    nav a::after {
+      content: '';
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      width: 0;
+      height: 2px;
+      background: var(--accent-2);
+      transition: var(--transition);
+    }
+    
+    nav a:hover::after,
+    nav a:focus::after {
+      width: 100%;
+    }
+    
+    nav a:focus {
+      outline: none;
+    }
+    
+    .mobile-menu-btn {
+      display: none;
+      background: transparent;
+      border: none;
+      color: white;
+      font-size: 24px;
+      cursor: pointer;
+      padding: 8px;
+      border-radius: var(--radius-sm);
+    }
+    
+    .mobile-menu-btn:focus {
+      outline: 2px solid var(--accent-2);
+    }
+    
+    /* Hero Section */
+    .hero {
+      background: linear-gradient(135deg, #0f172a 0%, #1e293b 100%);
+      color: white;
+      padding: 100px 0 80px;
+      position: relative;
+      overflow: hidden;
+    }
+    
+    .hero::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      right: 0;
+      width: 50%;
+      height: 100%;
+      background: url('https://images.unsplash.com/photo-1551836022-d5d88e9218df?q=80&w=1200&auto=format&fit=crop&ixlib=rb-4.0.3&s=6b3f8c5e7d8b6d8c6c1b1b3f3d9a8c6d') center/cover no-repeat;
+      border-radius: var(--radius-lg) 0 0 var(--radius-lg);
+      opacity: 0.9;
+    }
+    
+    @media (max-width: 1024px) {
+      .hero::before {
+        width: 40%;
+      }
+    }
+    
+    @media (max-width: 768px) {
+      .hero::before {
+        display: none;
+      }
+    }
+    
+    .hero-content {
+      position: relative;
+      z-index: 2;
+      max-width: 600px;
+    }
+    
+    @media (max-width: 768px) {
+      .hero-content {
+        text-align: center;
+        margin: 0 auto;
+      }
+    }
+    
+    .eyebrow {
+      display: inline-block;
+      padding: 8px 16px;
+      border-radius: var(--radius-xl);
+      background: rgba(0, 74, 173, 0.2);
+      color: var(--accent-2);
+      font-weight: 600;
+      margin-bottom: 24px;
+      font-size: 14px;
+      letter-spacing: 1px;
+    }
+    
+    .hero h1 {
+      font-size: 48px;
+      margin-bottom: 24px;
+      line-height: 1.1;
+    }
+    
+    @media (max-width: 768px) {
+      .hero h1 {
+        font-size: 36px;
+      }
+    }
+    
+    @media (max-width: 576px) {
+      .hero h1 {
+        font-size: 32px;
+      }
+    }
+    
+    .hero h1 .highlight {
+      background: linear-gradient(90deg, #ffcc00, #ff9900);
+      -webkit-background-clip: text;
+      background-clip: text;
+      color: transparent;
+    }
+    
+    .hero p {
+      font-size: 18px;
+      margin-bottom: 32px;
+      opacity: 0.9;
+      max-width: 500px;
+    }
+    
+    @media (max-width: 768px) {
+      .hero p {
+        margin: 0 auto 32px;
+      }
+    }
+    
+    .hero-cta {
+      display: flex;
+      gap: 16px;
+      margin-bottom: 40px;
+    }
+    
+    @media (max-width: 768px) {
+      .hero-cta {
+        justify-content: center;
+      }
+    }
+    
+    @media (max-width: 576px) {
+      .hero-cta {
+        flex-direction: column;
+      }
+    }
+    
+    .stats-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 16px;
+      max-width: 500px;
+    }
+    
+    @media (max-width: 768px) {
+      .stats-grid {
+        margin: 0 auto;
+      }
+    }
+    
+    .stat-box {
+      background: rgba(255, 255, 255, 0.08);
+      border-radius: var(--radius-md);
+      padding: 16px;
+      text-align: center;
+      backdrop-filter: blur(4px);
+    }
+    
+    .stat-number {
+      font-size: 28px;
+      font-weight: 700;
+      margin-bottom: 4px;
+      color: var(--accent-2);
+    }
+    
+    .stat-label {
+      font-size: 14px;
+      opacity: 0.8;
+    }
+    
+    /* Trust Badges */
+    .trust-badges {
+      display: flex;
+      justify-content: center;
+      gap: 24px;
+      margin-top: 48px;
+      flex-wrap: wrap;
+    }
+    
+    .badge {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      background: #fff;
+      padding: 12px 20px;
+      border-radius: var(--radius-xl);
+      box-shadow: var(--shadow-md);
+      font-weight: 600;
+      color: var(--dark);
+    }
+    
+    .badge-icon {
+      color: var(--accent-2);
+      font-size: 20px;
+    }
+    
+    /* Plans Section */
+    .plans-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 24px;
+      margin-top: 32px;
+    }
+    
+    .plan-card {
+      background: #fff;
+      border-radius: var(--radius-lg);
+      overflow: hidden;
+      box-shadow: var(--shadow-md);
+      transition: var(--transition);
+      border: 1px solid var(--border);
+      display: flex;
+      flex-direction: column;
+      height: 100%;
+    }
+    
+    .plan-card:hover {
+      transform: translateY(-8px);
+      box-shadow: var(--shadow-lg);
+    }
+    
+    .plan-header {
+      background: linear-gradient(90deg, var(--accent), var(--accent-2));
+      color: white;
+      padding: 24px;
+      text-align: center;
+    }
+    
+    .plan-header h3 {
+      font-size: 24px;
+      margin-bottom: 8px;
+    }
+    
+    .plan-price {
+      font-size: 32px;
+      font-weight: 700;
+    }
+    
+    .plan-price span {
+      font-size: 16px;
+      font-weight: 400;
+      opacity: 0.8;
+    }
+    
+    .plan-features {
+      padding: 24px;
+      flex-grow: 1;
+      display: flex;
+      flex-direction: column;
+    }
+    
+    .feature {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      padding: 12px 0;
+      border-bottom: 1px solid var(--border);
+    }
+    
+    .feature:last-child {
+      border-bottom: none;
+    }
+    
+    .feature-icon {
+      color: var(--success);
+      flex-shrink: 0;
+    }
+    
+    .plan-card .btn {
+      margin-top: auto;
+    }
+    
+    /* Calculator Section */
+    .calculator {
+      background: linear-gradient(135deg, var(--accent-light) 0%, #e6f0ff 100%);
+      border-radius: var(--radius-lg);
+      overflow: hidden;
+    }
+    
+    .calculator-container {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 40px;
+      padding: 40px;
+    }
+    
+    @media (max-width: 768px) {
+      .calculator-container {
+        grid-template-columns: 1fr;
+      }
+    }
+    
+    .calculator-form {
+      background: white;
+      border-radius: var(--radius-md);
+      padding: 32px;
+      box-shadow: var(--shadow-sm);
+    }
+    
+    .form-group {
+      margin-bottom: 24px;
+    }
+    
+    .form-group label {
+      display: block;
+      margin-bottom: 8px;
+      font-weight: 500;
+      color: var(--dark);
+    }
+    
+    .form-group input[type="range"] {
+      width: 100%;
+      height: 8px;
+      -webkit-appearance: none;
+      background: var(--border);
+      border-radius: var(--radius-sm);
+      outline: none;
+    }
+    
+    .form-group input[type="range"]::-webkit-slider-thumb {
+      -webkit-appearance: none;
+      width: 20px;
+      height: 20px;
+      background: var(--accent-2);
+      border-radius: 50%;
+      cursor: pointer;
+    }
+    
+    .range-values {
+      display: flex;
+      justify-content: space-between;
+      margin-top: 8px;
+      color: var(--muted);
+      font-size: 14px;
+    }
+    
+    .form-control {
+      width: 100%;
+      padding: 14px 16px;
+      border: 1px solid var(--border);
+      border-radius: var(--radius-sm);
+      font-family: inherit;
+      font-size: 16px;
+      transition: var(--transition);
+    }
+    
+    .form-control:focus {
+      outline: none;
+      border-color: var(--accent-2);
+      box-shadow: 0 0 0 3px rgba(0, 119, 255, 0.1);
+    }
+    
+    .calculator-results {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+    }
+    
+    .results-card {
+      background: white;
+      border-radius: var(--radius-md);
+      padding: 32px;
+      box-shadow: var(--shadow-sm);
+      text-align: center;
+    }
+    
+    .result-value {
+      font-size: 36px;
+      font-weight: 700;
+      color: var(--accent);
+      margin: 16px 0;
+    }
+    
+    .result-label {
+      color: var(--muted);
+      font-size: 14px;
+    }
+    
+    .results-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 16px;
+      margin-top: 24px;
+    }
+    
+    .result-item {
+      background: var(--accent-light);
+      border-radius: var(--radius-sm);
+      padding: 16px;
+      text-align: center;
+    }
+    
+    /* Testimonials */
+    .testimonials-container {
+      position: relative;
+      max-width: 800px;
+      margin: 0 auto;
+    }
+    
+    .testimonial {
+      background: white;
+      border-radius: var(--radius-lg);
+      padding: 40px;
+      box-shadow: var(--shadow-md);
+      margin: 0 20px;
+      position: relative;
+    }
+    
+    .testimonial::before {
+      content: '"';
+      position: absolute;
+      top: 20px;
+      left: 20px;
+      font-size: 80px;
+      color: var(--accent-light);
+      font-family: serif;
+      line-height: 1;
+    }
+    
+    .testimonial-content {
+      font-size: 18px;
+      font-style: italic;
+      margin-bottom: 24px;
+      line-height: 1.7;
+      position: relative;
+      z-index: 2;
+    }
+    
+    .client-info {
+      display: flex;
+      align-items: center;
+      gap: 16px;
+    }
+    
+    .client-avatar {
+      width: 56px;
+      height: 56px;
+      border-radius: 50%;
+      object-fit: cover;
+    }
+    
+    .client-details h4 {
+      font-size: 18px;
+      margin-bottom: 4px;
+    }
+    
+    .client-details p {
+      color: var(--muted);
+      font-size: 14px;
+    }
+    
+    /* FAQ Section */
+    .faq-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 24px;
+      margin-top: 32px;
+    }
+    
+    .faq-item {
+      background: white;
+      border-radius: var(--radius-md);
+      overflow: hidden;
+      box-shadow: var(--shadow-sm);
+      border: 1px solid var(--border);
+      transition: var(--transition);
+    }
+    
+    .faq-item:hover {
+      box-shadow: var(--shadow-md);
+    }
+    
+    .faq-question {
+      padding: 20px;
+      font-weight: 600;
+      cursor: pointer;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      background: var(--light);
+    }
+    
+    .faq-answer {
+      padding: 0 20px 20px;
+      color: var(--muted);
+      display: none;
+    }
+    
+    .faq-item.active .faq-answer {
+      display: block;
+    }
+    
+    .faq-toggle {
+      transition: var(--transition);
+    }
+    
+    .faq-item.active .faq-toggle {
+      transform: rotate(180deg);
+    }
+    
+    /* CTA Section */
+    .cta-section {
+      background: linear-gradient(135deg, var(--accent) 0%, var(--accent-2) 100%);
+      color: white;
+      text-align: center;
+      padding: 80px 0;
+      border-radius: var(--radius-lg);
+    }
+    
+    .cta-section h2 {
+      font-size: 36px;
+      margin-bottom: 16px;
+    }
+    
+    .cta-section p {
+      max-width: 600px;
+      margin: 0 auto 32px;
+      opacity: 0.9;
+    }
+    
+    .cta-buttons {
+      display: flex;
+      gap: 16px;
+      justify-content: center;
+      flex-wrap: wrap;
+    }
+    
+    /* Footer */
+    footer {
+      background: var(--dark);
+      color: white;
+      padding: 80px 0 40px;
+    }
+    
+    .footer-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 40px;
+      margin-bottom: 60px;
+    }
+    
+    .footer-column h3 {
+      font-size: 20px;
+      margin-bottom: 24px;
+      position: relative;
+      padding-bottom: 12px;
+    }
+    
+    .footer-column h3::after {
+      content: '';
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      width: 40px;
+      height: 3px;
+      background: var(--accent-2);
+    }
+    
+    .contact-item {
+      display: flex;
+      gap: 16px;
+      margin-bottom: 16px;
+      align-items: flex-start;
+    }
+    
+    .contact-icon {
+      color: var(--accent-2);
+      font-size: 20px;
+      margin-top: 4px;
+      flex-shrink: 0;
+    }
+    
+    .footer-links {
+      list-style: none;
+    }
+    
+    .footer-links li {
+      margin-bottom: 12px;
+    }
+    
+    .footer-links a {
+      transition: var(--transition);
+      opacity: 0.8;
+      display: block;
+    }
+    
+    .footer-links a:hover {
+      opacity: 1;
+      color: var(--accent-2);
+      transform: translateX(5px);
+    }
+    
+    .social-links {
+      display: flex;
+      gap: 16px;
+      margin-top: 20px;
+    }
+    
+    .social-link {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 40px;
+      height: 40px;
+      border-radius: 50%;
+      background: rgba(255, 255, 255, 0.1);
+      transition: var(--transition);
+    }
+    
+    .social-link:hover {
+      background: var(--accent-2);
+      transform: translateY(-3px);
+    }
+    
+    .copyright {
+      text-align: center;
+      padding-top: 40px;
+      border-top: 1px solid rgba(255, 255, 255, 0.1);
+      color: rgba(255, 255, 255, 0.6);
+      font-size: 14px;
+    }
+    
+    /* Sticky Contact Bar */
+    .sticky-bar {
+      position: fixed;
+      left: 0;
+      right: 0;
+      bottom: 20px;
+      display: flex;
+      justify-content: center;
+      z-index: 1000;
+      padding: 0 20px;
+      transition: transform 0.3s ease;
+    }
+    
+    .sticky-bar.hidden {
+      transform: translateY(100px);
+    }
+    
+    .sticky-inner {
+      background: linear-gradient(90deg, var(--accent), var(--accent-2));
+      color: #fff;
+      padding: 12px 24px;
+      border-radius: var(--radius-xl);
+      display: flex;
+      gap: 24px;
+      align-items: center;
+      box-shadow: var(--shadow-lg);
+      animation: pulse 2s infinite;
+    }
+    
+    @media (max-width: 576px) {
+      .sticky-inner {
+        flex-direction: column;
+        gap: 12px;
+        padding: 16px;
+      }
+    }
+    
+    .sticky-inner a {
+      color: #fff;
+      text-decoration: none;
+      font-weight: 600;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      transition: var(--transition);
+    }
+    
+    .sticky-inner a:hover {
+      transform: translateY(-2px);
+    }
+    
+    .sticky-inner .countdown-timer {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      font-weight: 600;
+    }
+    
+    @keyframes pulse {
+      0% {
+        box-shadow: 0 0 0 0 rgba(0, 119, 255, 0.4);
+      }
+      70% {
+        box-shadow: 0 0 0 10px rgba(0, 119, 255, 0);
+      }
+      100% {
+        box-shadow: 0 0 0 0 rgba(0, 119, 255, 0);
+      }
+    }
+    
+    /* Animation Classes */
+    .fade-up {
+      opacity: 0;
+      transform: translateY(20px);
+    }
+    
+    .slide-left {
+      opacity: 0;
+      transform: translateX(-20px);
+    }
+    
+    /* Responsive Styles */
+    @media (max-width: 768px) {
+      section {
+        padding: 60px 0;
+      }
+      
+      .section-title h2 {
+        font-size: 28px;
+      }
+      
+      .hero {
+        padding: 80px 0 60px;
+      }
+      
+      .mobile-menu-btn {
+        display: block;
+      }
+      
+      nav ul {
+        position: fixed;
+        top: 70px;
+        left: 0;
+        right: 0;
+        background: var(--dark);
+        flex-direction: column;
+        padding: 20px;
+        gap: 0;
+        transform: translateY(-150%);
+        transition: var(--transition);
+        z-index: 999;
+      }
+      
+      nav ul.active {
+        transform: translateY(0);
+      }
+      
+      nav ul li {
+        padding: 12px 0;
+        border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+      }
+    }
+    
+    /* Skip to content link for accessibility */
+    .skip-link {
+      position: absolute;
+      top: -40px;
+      left: 0;
+      background: var(--accent);
+      color: white;
+      padding: 8px;
+      z-index: 1001;
+      transition: top 0.3s;
+    }
+    
+    .skip-link:focus {
+      top: 0;
+    }
+  </style>
+</head>
+<body>
+  <!-- Skip to content link -->
+  <a href="#main-content" class="skip-link">Skip to main content</a>
+  
+  <!-- Header -->
+  <header>
+    <div class="container header-container">
+      <a href="#" class="logo" aria-label="LIC Advisor Home">
+        <i class="fas fa-shield-alt logo-icon" aria-hidden="true"></i>
+        <span>LIC Advisor</span>
+      </a>
+      
+      <button class="mobile-menu-btn" aria-label="Toggle navigation menu">
+        <i class="fas fa-bars"></i>
+      </button>
+      
+      <nav>
+        <ul>
+          <li><a href="#plans">Plans</a></li>
+          <li><a href="#calculator">Calculator</a></li>
+          <li><a href="#testimonials">Testimonials</a></li>
+          <li><a href="#faq">FAQ</a></li>
+          <li><a href="#contact">Contact</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <!-- Hero Section -->
+  <section class="hero" id="main-content">
+    <div class="container">
+      <div class="hero-content fade-up">
+        <span class="eyebrow">Authorized LIC Advisor</span>
+        <h1>Secure Your Family's Future with <span class="highlight">Smart LIC Plans</span></h1>
+        <p>Personalized insurance solutions for education, retirement, and lifetime income. Get a free consultation to protect what matters most.</p>
+        
+        <div class="hero-cta">
+          <a href="tel:+916261225135" class="btn btn-primary">
+            <i class="fas fa-phone"></i> Call Now
+          </a>
+          <a href="https://wa.me/916261225135" target="_blank" class="btn btn-whatsapp">
+            <i class="fab fa-whatsapp"></i> WhatsApp
+          </a>
+        </div>
+        
+        <div class="stats-grid">
+          <div class="stat-box">
+            <div class="stat-number" id="policiesCount">500+</div>
+            <div class="stat-label">Policies Sold</div>
+          </div>
+          <div class="stat-box">
+            <div class="stat-number" id="clientsCount">300+</div>
+            <div class="stat-label">Happy Families</div>
+          </div>
+          <div class="stat-box">
+            <div class="stat-number" id="experienceCount">10+</div>
+            <div class="stat-label">Years Experience</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Trust Badges -->
+  <section aria-label="Trust badges">
+    <div class="container">
+      <div class="trust-badges">
+        <div class="badge">
+          <i class="fas fa-award badge-icon" aria-hidden="true"></i>
+          <span>LIC Authorized Advisor</span>
+        </div>
+        <div class="badge">
+          <i class="fas fa-check-circle badge-icon" aria-hidden="true"></i>
+          <span>Zero Pressure Consultation</span>
+        </div>
+        <div class="badge">
+          <i class="fas fa-star badge-icon" aria-hidden="true"></i>
+          <span>Premium Service Guarantee</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Plans Section -->
+  <section id="plans" class="container">
+    <div class="section-title">
+      <h2>Popular Insurance Plans</h2>
+      <p>Choose a plan that fits your financial goals and request a personalized quote</p>
+    </div>
+    
+    <div class="plans-grid">
+      <div class="plan-card fade-up">
+        <div class="plan-header">
+          <h3>Family Income Plan</h3>
+          <div class="plan-price">₹101<span>/day</span></div>
+        </div>
+        <div class="plan-features">
+          <div class="feature">
+            <i class="fas fa-check-circle feature-icon" aria-hidden="true"></i>
+            <span>Guaranteed yearly income</span>
+          </div>
+          <div class="feature">
+            <i class="fas fa-check-circle feature-icon" aria-hidden="true"></i>
+            <span>Life cover up to ₹50 lakhs</span>
+          </div>
+          <div class="feature">
+            <i class="fas fa-check-circle feature-icon" aria-hidden="true"></i>
+            <span>Tax benefits under 80C</span>
+          </div>
+          <div class="feature">
+            <i class="fas fa-check-circle feature-icon" aria-hidden="true"></i>
+            <span>Flexible premium payment terms</span>
+          </div>
+          <a href="tel:+916261225135" class="btn btn-primary">
+            Get Quote
+          </a>
+        </div>
+      </div>
+      
+      <div class="plan-card fade-up">
+        <div class="plan-header">
+          <h3>Child Education Plan</h3>
+          <div class="plan-price">₹104<span>/day</span></div>
+        </div>
+        <div class="plan-features">
+          <div class="feature">
+            <i class="fas fa-check-circle feature-icon" aria-hidden="true"></i>
+            <span>Lump sum for education & marriage</span>
+          </div>
+          <div class="feature">
+            <i class="fas fa-check-circle feature-icon" aria-hidden="true"></i>
+            <span>Waiver of premium benefit</span>
+          </div>
+          <div class="feature">
+            <i class="fas fa-check-circle feature-icon" aria-hidden="true"></i>
+            <span>Bonus accumulation</span>
+          </div>
+          <div class="feature">
+            <i class="fas fa-check-circle feature-icon" aria-hidden="true"></i>
+            <span>Flexible payout options</span>
+          </div>
+          <a href="tel:+916261225135" class="btn btn-primary">
+            Get Quote
+          </a>
+        </div>
+      </div>
+      
+      <div class="plan-card fade-up">
+        <div class="plan-header">
+          <h3>Wealth Protector</h3>
+          <div class="plan-price">₹113<span>/day</span></div>
+        </div>
+        <div class="plan-features">
+          <div class="feature">
+            <i class="fas fa-check-circle feature-icon" aria-hidden="true"></i>
+            <span>High benefit long-term growth</span>
+          </div>
+          <div class="feature">
+            <i class="fas fa-check-circle feature-icon" aria-hidden="true"></i>
+            <span>Life cover + investment growth</span>
+          </div>
+          <div class="feature">
+            <i class="fas fa-check-circle feature-icon" aria-hidden="true"></i>
+            <span>Loan facility available</span>
+          </div>
+          <div class="feature">
+            <i class="fas fa-check-circle feature-icon" aria-hidden="true"></i>
+            <span>Partial withdrawal option</span>
+          </div>
+          <a href="tel:+916261225135" class="btn btn-primary">
+            Get Quote
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Calculator Section -->
+  <section id="calculator" class="container">
+    <div class="section-title">
+      <h2>LIC Benefit Calculator</h2>
+      <p>Estimate your policy maturity value with our easy-to-use calculator</p>
+    </div>
+    
+    <div class="calculator fade-up">
+      <div class="calculator-container">
+        <div class="calculator-form">
+          <div class="form-group">
+            <label for="premium">Monthly Premium (₹)</label>
+            <input type="range" id="premium" min="1000" max="50000" value="3000" class="form-control">
+            <div class="range-values">
+              <span>₹1,000</span>
+              <span>₹50,000</span>
+            </div>
+          </div>
+          
+          <div class="form-group">
+            <label for="term">Policy Term (years)</label>
+            <select id="term" class="form-control">
+              <option value="10">10 Years</option>
+              <option value="15">15 Years</option>
+              <option value="20" selected>20 Years</option>
+              <option value="25">25 Years</option>
+              <option value="30">30 Years</option>
+            </select>
+          </div>
+          
+          <div class="form-group">
+            <label for="bonus">Expected Annual Bonus (%)</label>
+            <input type="number" id="bonus" min="0" max="12" value="4" class="form-control">
+          </div>
+          
+          <div class="form-group">
+            <button id="calculate" class="btn btn-primary">
+              Calculate Maturity Value
+            </button>
+          </div>
+        </div>
+        
+        <div class="calculator-results">
+          <div class="results-card">
+            <div class="result-label">Estimated Maturity Value</div>
+            <div class="result-value" id="maturityValue">₹8,76,500</div>
+            <div class="result-label">After <span id="termValue">20</span> years</div>
+            
+            <div class="results-grid">
+              <div class="result-item">
+                <div class="result-label">Total Premium Paid</div>
+                <div class="result-value-sm" id="totalPaid">₹7,20,000</div>
+              </div>
+              <div class="result-item">
+                <div class="result-label">Estimated Returns</div>
+                <div class="result-value-sm" id="totalReturns">₹1,56,500</div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Testimonials Section -->
+  <section id="testimonials" style="background: #f8fafc;">
+    <div class="container">
+      <div class="section-title">
+        <h2>Client Testimonials</h2>
+        <p>Hear what our satisfied clients have to say about our services</p>
+      </div>
+      
+      <div class="testimonials-container fade-up">
+        <div class="testimonial">
+          <div class="testimonial-content">
+            Chandrakala helped me choose the perfect policy for my family's needs. Her guidance was clear, patient, and she explained every detail thoroughly. I feel secure knowing my family's future is protected.
+          </div>
+          <div class="client-info">
+            <img src="https://randomuser.me/api/portraits/men/32.jpg" alt="Rahul Sharma" class="client-avatar" loading="lazy">
+            <div class="client-details">
+              <h4>Rahul Sharma</h4>
+              <p>Business Owner, Raipur</p>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <div class="testimonials-container fade-up" style="margin-top: 40px;">
+        <div class="testimonial">
+          <div class="testimonial-content">
+            The claim process was incredibly smooth when we needed it most. Chandrakala provided constant support and followed up regularly. Her professionalism and empathy during a difficult time meant everything to us.
+          </div>
+          <div class="client-info">
+            <img src="https://randomuser.me/api/portraits/women/44.jpg" alt="Priya Patel" class="client-avatar" loading="lazy">
+            <div class="client-details">
+              <h4>Priya Patel</h4>
+              <p>Teacher, Raipur</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FAQ Section -->
+  <section id="faq" class="container">
+    <div class="section-title">
+      <h2>Frequently Asked Questions</h2>
+      <p>Find answers to common questions about LIC policies</p>
+    </div>
+    
+    <div class="faq-grid">
+      <div class="faq-item fade-up">
+        <div class="faq-question" tabindex="0" role="button" aria-expanded="false" aria-controls="faq-answer1">
+          What is the minimum premium for LIC policies?
+          <i class="fas fa-chevron-down faq-toggle" aria-hidden="true"></i>
+        </div>
+        <div class="faq-answer" id="faq-answer1">
+          The minimum premium varies by policy, but many plans start as low as ₹100 per month. Child plans and term insurance typically have lower premiums, while investment-focused policies may require higher contributions.
+        </div>
+      </div>
+      
+      <div class="faq-item fade-up">
+        <div class="faq-question" tabindex="0" role="button" aria-expanded="false" aria-controls="faq-answer2">
+          How do I choose the right insurance plan?
+          <i class="fas fa-chevron-down faq-toggle" aria-hidden="true"></i>
+        </div>
+        <div class="faq-answer" id="faq-answer2">
+          The best policy depends on your financial goals, age, income, and family situation. During your free consultation, we'll assess your needs and recommend plans that provide optimal coverage and benefits for your specific situation.
+        </div>
+      </div>
+      
+      <div class="faq-item fade-up">
+        <div class="faq-question" tabindex="0" role="button" aria-expanded="false" aria-controls="faq-answer3">
+          What documents are required to buy a policy?
+          <i class="fas fa-chevron-down faq-toggle" aria-hidden="true"></i>
+        </div>
+        <div class="faq-answer" id="faq-answer3">
+          You'll need identity proof (Aadhaar, PAN), address proof, age proof, and income documents. For certain policies, a medical examination may be required. We guide you through the entire documentation process.
+        </div>
+      </div>
+      
+      <div class="faq-item fade-up">
+        <div class="faq-question" tabindex="0" role="button" aria-expanded="false" aria-controls="faq-answer4">
+          Can I get a loan against my LIC policy?
+          <i class="fas fa-chevron-down faq-toggle" aria-hidden="true"></i>
+        </div>
+        <div class="faq-answer" id="faq-answer4">
+          Yes, most traditional LIC policies allow you to take loans after 3 years of premium payment. The loan amount depends on the surrender value of your policy. We can help you understand the terms and process.
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA Section -->
+  <section class="container">
+    <div class="cta-section">
+      <h2>Start Securing Your Future Today</h2>
+      <p>Get a personalized insurance plan consultation at no cost</p>
+      <div class="cta-buttons">
+        <a href="tel:+916261225135" class="btn btn-primary">
+          <i class="fas fa-phone"></i> Call for Consultation
+        </a>
+        <a href="https://wa.me/916261225135" target="_blank" class="btn btn-whatsapp">
+          <i class="fab fa-whatsapp"></i> Chat on WhatsApp
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer id="contact">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-column">
+          <h3>Chandrakala Cheman Sahu</h3>
+          <p style="opacity: 0.8; margin-bottom: 20px;">LIC Certified Financial Advisor with over 10 years of experience helping families secure their financial future.</p>
+          
+          <div class="contact-item">
+            <i class="fas fa-map-marker-alt contact-icon" aria-hidden="true"></i>
+            <span>Raipur, Chhattisgarh</span>
+          </div>
+          
+          <div class="contact-item">
+            <i class="fas fa-phone contact-icon" aria-hidden="true"></i>
+            <span>+91 6261225135</span>
+          </div>
+          
+          <div class="contact-item">
+            <i class="fas fa-envelope contact-icon" aria-hidden="true"></i>
+            <span>contact@chandrakalacheman.com</span>
+          </div>
+          
+          <div class="social-links">
+            <a href="#" class="social-link" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+            <a href="#" class="social-link" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+            <a href="#" class="social-link" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+            <a href="#" class="social-link" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+          </div>
+        </div>
+        
+        <div class="footer-column">
+          <h3>Quick Links</h3>
+          <ul class="footer-links">
+            <li><a href="#plans">Insurance Plans</a></li>
+            <li><a href="#calculator">Benefit Calculator</a></li>
+            <li><a href="#testimonials">Client Testimonials</a></li>
+            <li><a href="#faq">FAQ</a></li>
+            <li><a href="#">Privacy Policy</a></li>
+            <li><a href="#">Terms of Service</a></li>
+          </ul>
+        </div>
+        
+        <div class="footer-column">
+          <h3>Our Services</h3>
+          <ul class="footer-links">
+            <li><a href="#">Life Insurance</a></li>
+            <li><a href="#">Retirement Planning</a></li>
+            <li><a href="#">Child Education Plans</a></li>
+            <li><a href="#">Health Insurance</a></li>
+            <li><a href="#">Investment Plans</a></li>
+            <li><a href="#">Tax Saving Solutions</a></li>
+          </ul>
+        </div>
+        
+        <div class="footer-column">
+          <h3>Business Hours</h3>
+          <div style="opacity: 0.8; line-height: 1.8;">
+            <p><strong>Monday-Friday:</strong> 9:30 AM - 6:30 PM</p>
+            <p><strong>Saturday:</strong> 10:00 AM - 2:00 PM</p>
+            <p><strong>Sunday:</strong> Closed</p>
+            <p style="margin-top: 20px;">Evening and weekend consultations available by appointment.</p>
+          </div>
+        </div>
+      </div>
+      
+      <div class="copyright">
+        © 2023 Chandrakala Cheman Sahu - LIC Financial Advisor. All rights reserved.
+        <div style="margin-top: 10px;">LIC of India Corporate Agent Registration No: CA12345</div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Sticky Contact Bar -->
+  <div class="sticky-bar">
+    <div class="sticky-inner">
+      <div class="countdown-timer">
+        <i class="far fa-clock"></i>
+        <span id="countdown-text">Free slots: 6h 15m 30s</span>
+      </div>
+      <a href="tel:+916261225135">
+        <i class="fas fa-phone"></i> Call Now
+      </a>
+      <a href="https://wa.me/916261225135" target="_blank">
+        <i class="fab fa-whatsapp"></i> WhatsApp
+      </a>
+    </div>
+  </div>
+
+  <!-- Load GSAP after content -->
+  <script src="https://unpkg.com/gsap@3/dist/gsap.min.js" defer></script>
+  <script src="https://unpkg.com/gsap@3/dist/ScrollTrigger.min.js" defer></script>
+  
+  <script>
+    // Wait until DOM is loaded
+    document.addEventListener('DOMContentLoaded', function() {
+      // Mobile menu toggle
+      const menuBtn = document.querySelector('.mobile-menu-btn');
+      const navMenu = document.querySelector('nav ul');
+      
+      menuBtn.addEventListener('click', () => {
+        navMenu.classList.toggle('active');
+        menuBtn.innerHTML = navMenu.classList.contains('active') ? 
+          '<i class="fas fa-times"></i>' : '<i class="fas fa-bars"></i>';
+      });
+      
+      // FAQ accordion
+      const faqItems = document.querySelectorAll('.faq-item');
+      
+      faqItems.forEach(item => {
+        const question = item.querySelector('.faq-question');
+        
+        question.addEventListener('click', () => {
+          const isActive = item.classList.contains('active');
+          
+          // Close all items
+          faqItems.forEach(i => i.classList.remove('active'));
+          
+          // Open clicked item if it wasn't active
+          if (!isActive) {
+            item.classList.add('active');
+            question.setAttribute('aria-expanded', 'true');
+          } else {
+            question.setAttribute('aria-expanded', 'false');
+          }
+        });
+        
+        // Keyboard accessibility
+        question.addEventListener('keydown', (e) => {
+          if (e.key === 'Enter' || e.key === ' ') {
+            e.preventDefault();
+            question.click();
+          }
+        });
+      });
+      
+      // Calculator functionality
+      const premiumInput = document.getElementById('premium');
+      const termSelect = document.getElementById('term');
+      const bonusInput = document.getElementById('bonus');
+      const calculateBtn = document.getElementById('calculate');
+      const maturityValue = document.getElementById('maturityValue');
+      const termValue = document.getElementById('termValue');
+      const totalPaid = document.getElementById('totalPaid');
+      const totalReturns = document.getElementById('totalReturns');
+      
+      function formatCurrency(amount) {
+        return '₹' + amount.toLocaleString('en-IN');
+      }
+      
+      function calculateMaturity() {
+        const premium = parseInt(premiumInput.value);
+        const term = parseInt(termSelect.value);
+        const bonus = parseFloat(bonusInput.value) / 100;
+        
+        // Simple calculation (for demonstration)
+        const annualPremium = premium * 12;
+        const totalPremium = annualPremium * term;
+        
+        // Projected maturity calculation
+        const maturity = Math.round(totalPremium * (1 + bonus * term) * 1.12);
+        const returns = maturity - totalPremium;
+        
+        // Update display
+        maturityValue.textContent = formatCurrency(maturity);
+        termValue.textContent = term;
+        totalPaid.textContent = formatCurrency(totalPremium);
+        totalReturns.textContent = formatCurrency(returns);
+      }
+      
+      // Initial calculation
+      calculateMaturity();
+      
+      // Event listeners
+      premiumInput.addEventListener('input', calculateMaturity);
+      termSelect.addEventListener('change', calculateMaturity);
+      bonusInput.addEventListener('input', calculateMaturity);
+      calculateBtn.addEventListener('click', calculateMaturity);
+      
+      // Mobile menu close when clicking a link
+      document.querySelectorAll('nav a').forEach(link => {
+        link.addEventListener('click', () => {
+          navMenu.classList.remove('active');
+          menuBtn.innerHTML = '<i class="fas fa-bars"></i>';
+        });
+      });
+      
+      // Number counting animation
+      function animateValue(element, start, end, duration) {
+        let startTimestamp = null;
+        const step = (timestamp) => {
+          if (!startTimestamp) startTimestamp = timestamp;
+          const progress = Math.min((timestamp - startTimestamp) / duration, 1);
+          const value = Math.floor(progress * (end - start) + start);
+          element.textContent = value + "+";
+          if (progress < 1) {
+            window.requestAnimationFrame(step);
+          }
+        };
+        window.requestAnimationFrame(step);
+      }
+      
+      // Animate stats on scroll
+      const statsSection = document.querySelector('.hero');
+      const statsObserver = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            animateValue(document.getElementById('policiesCount'), 0, 500, 1500);
+            animateValue(document.getElementById('clientsCount'), 0, 300, 1500);
+            animateValue(document.getElementById('experienceCount'), 0, 10, 1500);
+            statsObserver.disconnect();
+          }
+        });
+      }, { threshold: 0.5 });
+      
+      statsObserver.observe(statsSection);
+      
+      // Sticky contact bar timer
+      function updateCountdown() {
+        const now = new Date();
+        const endOfDay = new Date();
+        endOfDay.setHours(23, 59, 59, 999);
+        
+        const diff = endOfDay - now;
+        const hours = Math.floor(diff / (1000 * 60 * 60));
+        const minutes = Math.floor((diff % (1000 * 60 * 60)) / (1000 * 60));
+        const seconds = Math.floor((diff % (1000 * 60)) / 1000);
+        
+        document.getElementById('countdown-text').textContent = 
+          `Free slots: ${hours}h ${minutes}m ${seconds}s`;
+      }
+      
+      // Initialize and update countdown every second
+      updateCountdown();
+      setInterval(updateCountdown, 1000);
+      
+      // Hide sticky bar when scrolling down
+      let lastScrollTop = 0;
+      const stickyBar = document.querySelector('.sticky-bar');
+      
+      window.addEventListener('scroll', () => {
+        const scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+        
+        if (scrollTop > lastScrollTop && scrollTop > 300) {
+          stickyBar.classList.add('hidden');
+        } else {
+          stickyBar.classList.remove('hidden');
+        }
+        lastScrollTop = scrollTop;
+      });
+      
+      // Initialize GSAP animations when loaded
+      function initAnimations() {
+        if (typeof gsap !== 'undefined') {
+          gsap.registerPlugin(ScrollTrigger);
+          
+          // Animate elements on scroll
+          gsap.utils.toArray('.fade-up').forEach(el => {
+            gsap.fromTo(el, 
+              { opacity: 0, y: 30 },
+              {
+                opacity: 1,
+                y: 0,
+                duration: 0.8,
+                scrollTrigger: {
+                  trigger: el,
+                  start: 'top 90%',
+                }
+              }
+            );
+          });
+        } else {
+          // Fallback if GSAP doesn't load
+          document.querySelectorAll('.fade-up').forEach(el => {
+            el.style.opacity = 1;
+            el.style.transform = 'none';
+          });
+        }
+      }
+      
+      // Check if GSAP is already loaded
+      if (typeof gsap !== 'undefined') {
+        initAnimations();
+      } else {
+        // Wait for GSAP to load
+        window.addEventListener('load', initAnimations);
+      }
+    });
+  </script>
+</body>
+</html>

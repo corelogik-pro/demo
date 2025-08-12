@@ -1,0 +1,362 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <meta name="description" content="Chandrakala Cheman Sahu — LIC Financial Advisor. Free consultation. Call / WhatsApp now." />
+  <title>Chandrakala Cheman Sahu — LIC Advisor (Premium)</title>
+
+  <!-- Fonts & lightweight libs -->
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+
+  <!-- GSAP for smooth animations, no heavy frameworks -->
+  <script src="https://unpkg.com/gsap@3/dist/gsap.min.js"></script>
+  <!-- Lottie for micro-animations -->
+  <script src="https://unpkg.com/lottie-web@5/build/player/lottie.min.js"></script>
+
+  <style>
+    :root{--accent:#004aad;--accent-2:#0077ff;--warm:#ffcc00;--muted:#6b7280}
+    *{box-sizing:border-box}
+    body{font-family:'Poppins',sans-serif;margin:0;background:linear-gradient(180deg,#f7f9fc 0%,#e9eef9 100%);color:#102a43;line-height:1.45}
+
+    /* Header / Hero */
+    header.hero{min-height:78vh;display:grid;grid-template-columns:1fr 480px;gap:40px;align-items:center;padding:48px 6vw}
+    .hero-left{max-width:720px}
+    .eyebrow{display:inline-block;padding:6px 12px;border-radius:999px;background:rgba(0,74,173,0.1);color:var(--accent);font-weight:600;margin-bottom:18px}
+    h1{font-size:34px;margin:0 0 12px}
+    h1 .highlight{background:linear-gradient(90deg,var(--accent),var(--accent-2));-webkit-background-clip:text;background-clip:text;color:transparent}
+    p.lead{margin:0 0 20px;color:var(--muted)}
+    .hero-cta{display:flex;gap:14px;flex-wrap:wrap}
+    .btn{display:inline-flex;align-items:center;gap:10px;padding:12px 18px;border-radius:999px;font-weight:700;text-decoration:none}
+    .btn-call{background:var(--accent);color:#fff}
+    .btn-ws{background:#25d366;color:#fff}
+    .btn-outline{background:transparent;border:2px solid rgba(16,42,67,0.06);}
+
+    /* hero right card */
+    .card{background:linear-gradient(180deg,#ffffff,#f8fbff);border-radius:16px;padding:18px;box-shadow:0 8px 30px rgba(3,27,56,0.06);position:relative}
+    .advisor-photo{width:100%;height:420px;border-radius:12px;object-fit:cover}
+    .badge-row{display:flex;gap:10px;align-items:center;margin-top:12px}
+    .badge{background:#fff;padding:8px 10px;border-radius:10px;box-shadow:0 4px 12px rgba(2,6,23,0.04);font-weight:600}
+
+    /* sticky contact bar */
+    .sticky-bar{position:fixed;left:0;right:0;bottom:18px;display:flex;justify-content:center;padding:12px;z-index:9999}
+    .sticky-inner{background:linear-gradient(90deg,var(--accent),var(--accent-2));color:#fff;padding:10px 16px;border-radius:999px;display:flex;gap:12px;align-items:center;box-shadow:0 12px 40px rgba(2,6,23,0.15)}
+    .sticky-inner a{color:#fff;text-decoration:none;font-weight:700}
+
+    /* sections */
+    .container{max-width:1060px;margin:40px auto;padding:0 6vw}
+    .cards{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
+    .plan-card{background:#fff;padding:20px;border-radius:12px;box-shadow:0 8px 30px rgba(2,6,23,0.06);}
+    .feature-row{display:flex;gap:14px;align-items:center}
+
+    /* testimonials */
+    .testimonials{display:flex;gap:12px;align-items:center}
+    .testimonial{min-width:280px;background:#fff;padding:18px;border-radius:12px;box-shadow:0 8px 30px rgba(2,6,23,0.06)}
+
+    /* calculator */
+    .calc{display:grid;grid-template-columns:1fr 1fr;gap:18px;background:linear-gradient(180deg,#fff,#fbfdff);padding:18px;border-radius:12px;box-shadow:0 8px 30px rgba(2,6,23,0.05)}
+    label{display:block;font-size:13px;color:var(--muted);margin-bottom:6px}
+    input[type=range]{width:100%}
+    input,select{padding:10px 12px;border-radius:8px;border:1px solid #e6eef9}
+    .calc-output{background:#f6fbff;padding:16px;border-radius:10px;text-align:center}
+    .kpi{font-size:20px;font-weight:700;color:var(--accent)}
+
+    /* footer */
+    footer{padding:30px 6vw;background:linear-gradient(180deg,var(--accent),var(--accent-2));color:#fff;margin-top:40px}
+
+    /* small screens */
+    @media(max-width:980px){header.hero{grid-template-columns:1fr;min-height:auto;padding:28px 4vw}.card{order:2}.hero-left{order:1}.cards{grid-template-columns:1fr}.calc{grid-template-columns:1fr}.advisor-photo{height:260px}}
+
+    /* subtle animations (will be triggered by JS) */
+    .fade-up{opacity:0;transform:translateY(20px)}
+    .slide-left{opacity:0;transform:translateX(-20px)}
+
+    /* small helpers */
+    .muted{color:var(--muted)}
+    .center{text-align:center}
+  </style>
+</head>
+<body>
+
+  <!-- HERO -->
+  <header class="hero">
+    <div class="hero-left">
+      <span class="eyebrow">Authorized LIC Advisor</span>
+      <h1 class="fade-up">Secure your family's future with <span class="highlight">smart LIC plans</span></h1>
+      <p class="lead fade-up">Quick, clear guidance — personalized plans for education, retirement, and lifetime income. Free consultation for first-time visitors.</p>
+
+      <div class="hero-cta fade-up" style="--delay:0.15s">
+        <a id="callBtn" class="btn btn-call" href="tel:+916261225135">📞 Call 6261225135</a>
+        <a id="waBtn" class="btn btn-ws" href="https://wa.me/916261225135?text=Hi%20Advisor%2C%20I%20want%20a%20free%20LIC%20consultation" target="_blank">💬 WhatsApp</a>
+        <a id="bookBtn" class="btn btn-outline" href="#calculator">📊 Try Calculator</a>
+      </div>
+
+      <div style="margin-top:20px;display:flex;gap:14px;align-items:center" class="fade-up">
+        <div style="background:#fff;padding:10px;border-radius:10px;box-shadow:0 8px 30px rgba(2,6,23,0.04)">
+          <div style="font-weight:700">500+</div>
+          <div class="muted">Policies Sold</div>
+        </div>
+        <div style="background:#fff;padding:10px;border-radius:10px;box-shadow:0 8px 30px rgba(2,6,23,0.04)">
+          <div style="font-weight:700">300+</div>
+          <div class="muted">Happy Families</div>
+        </div>
+        <div style="background:#fff;padding:10px;border-radius:10px;box-shadow:0 8px 30px rgba(2,6,23,0.04)">
+          <div style="font-weight:700">10+</div>
+          <div class="muted">Years Experience</div>
+        </div>
+      </div>
+    </div>
+
+    <aside class="card fade-up">
+      <!-- hero photo (using a suitable royalty-free image) -->
+      <img class="advisor-photo" alt="Advisor photo" src="https://images.unsplash.com/photo-1551836022-d5d88e9218df?q=80&w=1200&auto=format&fit=crop&ixlib=rb-4.0.3&s=6b3f8c5e7d8b6d8c6c1b1b3f3d9a8c6d">
+
+      <div class="badge-row">
+        <div class="badge">LIC Authorized</div>
+        <div class="badge">Free 15‑min Consult</div>
+        <div class="badge">Zero Pressure</div>
+      </div>
+    </aside>
+  </header>
+
+  <!-- Sticky bottom contact bar (desktop & mobile) -->
+  <div class="sticky-bar">
+    <div class="sticky-inner">
+      <div style="display:flex;align-items:center;gap:12px">
+        <div style="font-weight:700">Free Consultation — Today</div>
+        <div style="font-size:13px;color:rgba(255,255,255,0.9)">Limited slots daily</div>
+      </div>
+      <div style="width:18px"></div>
+      <a href="tel:+916261225135">📞 Call</a>
+      <a href="https://wa.me/916261225135?text=Hi%20Advisor%2C%20I%20want%20a%20free%20LIC%20consultation" target="_blank">💬 WhatsApp</a>
+    </div>
+  </div>
+
+  <!-- PLANS & FEATURES -->
+  <section class="container">
+    <div style="display:flex;justify-content:space-between;align-items:center">
+      <h2>Popular Plans</h2>
+      <div class="muted">Choose a plan and request a free personalized quote</div>
+    </div>
+
+    <div class="cards" style="margin-top:18px">
+      <div class="plan-card">
+        <h3>Family Income Plan</h3>
+        <p class="muted">Guaranteed yearly income + life cover</p>
+        <div style="margin-top:10px;font-weight:700">₹101/day</div>
+      </div>
+      <div class="plan-card">
+        <h3>Child Education Plan</h3>
+        <p class="muted">Lump sum for education & marriage</p>
+        <div style="margin-top:10px;font-weight:700">₹104/day</div>
+      </div>
+      <div class="plan-card">
+        <h3>Wealth Protector</h3>
+        <p class="muted">High benefit, long-term growth</p>
+        <div style="margin-top:10px;font-weight:700">₹113/day</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Calculator + Detailed breakdown -->
+  <section id="calculator" class="container">
+    <h2>LIC Benefit Calculator</h2>
+    <p class="muted">Estimate maturity or see a detailed premium breakdown</p>
+
+    <div class="calc" style="margin-top:16px">
+      <div>
+        <label>Monthly Premium (₹)</label>
+        <input id="premiumInput" type="range" min="100" max="50000" value="3000">
+        <div style="display:flex;justify-content:space-between;margin-top:8px">
+          <div class="muted">₹100</div>
+          <div class="muted">₹50,000</div>
+        </div>
+
+        <label style="margin-top:12px">Policy Term (years)</label>
+        <select id="termSelect">
+          <option value="10">10</option>
+          <option value="15">15</option>
+          <option value="20" selected>20</option>
+          <option value="25">25</option>
+        </select>
+
+        <label style="margin-top:12px">Expected Annual Bonus (%)</label>
+        <input id="bonusInput" type="number" min="0" max="12" value="4">
+
+        <div style="margin-top:14px;display:flex;gap:10px">
+          <button id="calcBasic" class="btn btn-call">Calculate Basic</button>
+          <button id="calcDetailed" class="btn btn-outline">Detailed View</button>
+        </div>
+      </div>
+
+      <div>
+        <div class="calc-output">
+          <div class="muted">Total Paid (estimated)</div>
+          <div class="kpi" id="totalPaid">—</div>
+          <div style="height:6px"></div>
+          <div class="muted">Estimated Maturity Value</div>
+          <div class="kpi" id="maturity">—</div>
+        </div>
+
+        <div style="margin-top:12px;background:#fff;padding:12px;border-radius:10px;box-shadow:0 6px 18px rgba(2,6,23,0.04)">
+          <div style="font-weight:700">Detailed Breakdown</div>
+          <div style="font-size:13px;margin-top:8px;color:var(--muted)" id="detailedBox">No calculation yet.</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Testimonials & Trust -->
+  <section class="container">
+    <h2>What Clients Say</h2>
+    <div class="testimonials" style="margin-top:12px">
+      <div class="testimonial">
+        <div style="font-weight:700">Suresh K.</div>
+        <div class="muted" style="font-size:13px">"Very clear guidance and patient advisor. Helped choose the right plan."</div>
+      </div>
+      <div class="testimonial">
+        <div style="font-weight:700">Neha P.</div>
+        <div class="muted" style="font-size:13px">"Timely follow-up and great support during the claim process."</div>
+      </div>
+      <div class="testimonial">
+        <div style="font-weight:700">Rakesh T.</div>
+        <div class="muted" style="font-size:13px">"Transparent and no-pressure consultation. Highly recommended."</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Exit intent / First-visit popup (auto shows only on first visit for urgency) -->
+  <div id="firstPopup" style="display:none;position:fixed;inset:0;background:rgba(3,9,23,0.6);z-index:12000;align-items:center;justify-content:center">
+    <div style="background:#fff;padding:22px;border-radius:12px;max-width:420px;text-align:center;box-shadow:0 12px 40px rgba(2,6,23,0.2)">
+      <div style="font-weight:700;font-size:18px">Free 15‑min LIC Consultation</div>
+      <div class="muted" style="margin-top:8px">Claim a free slot — limited daily. Call or WhatsApp now and receive a free plan brochure.</div>
+      <div style="display:flex;gap:10px;justify-content:center;margin-top:16px">
+        <a class="btn btn-call" href="tel:+916261225135">📞 Call Now</a>
+        <a class="btn btn-ws" href="https://wa.me/916261225135?text=Hi%20Advisor%2C%20I%20want%20a%20free%20LIC%20consultation" target="_blank">💬 WhatsApp</a>
+      </div>
+      <div style="margin-top:12px;font-size:13px;color:var(--muted)"><a href="#" id="noThanks">No thanks</a></div>
+    </div>
+  </div>
+
+  <footer>
+    <div style="max-width:1060px;margin:0 auto;padding:0 6vw;display:flex;justify-content:space-between;align-items:center">
+      <div>
+        <div style="font-weight:700">Chandrakala Cheman Sahu</div>
+        <div style="font-size:13px">LIC Financial Advisor — Raipur</div>
+      </div>
+      <div style="text-align:right">
+        <div class="muted">Call / WhatsApp</div>
+        <div style="font-weight:700">6261225135</div>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    /* Small animation entrance using GSAP */
+    document.querySelectorAll('.fade-up').forEach((el,i)=>{gsap.to(el,{opacity:1,y:0,duration:0.8,delay:0.12*i})})
+
+    // Show first-visit popup once per visitor (localStorage)
+    const popup = document.getElementById('firstPopup');
+    if(!localStorage.getItem('seenAdvisorPopup')){
+      setTimeout(()=>{popup.style.display='flex'},900);
+    }
+    document.getElementById('noThanks').onclick = (e)=>{e.preventDefault();popup.style.display='none';localStorage.setItem('seenAdvisorPopup','1')}
+
+    // Exit intent popup (desktop)
+    let exitShown=false;
+    document.addEventListener('mouseout', function(e){
+      if(e.clientY < 10 && !exitShown && !localStorage.getItem('seenAdvisorPopup')){
+        popup.style.display='flex'; exitShown=true
+      }
+    });
+
+    // Simple testimonials carousel (auto slide)
+    const testimonials = document.querySelectorAll('.testimonial');
+    let tIndex=0;
+    setInterval(()=>{
+      testimonials.forEach((t,i)=>{t.style.transform = `translateX(${(i - tIndex)*320}px)`; t.style.transition='transform 0.6s'});
+      tIndex = (tIndex+1)%testimonials.length
+    },3500);
+
+    /* Calculator logic (basic and detailed) */
+    const premiumInput = document.getElementById('premiumInput');
+    const termSelect = document.getElementById('termSelect');
+    const bonusInput = document.getElementById('bonusInput');
+    const totalPaidEl = document.getElementById('totalPaid');
+    const maturityEl = document.getElementById('maturity');
+    const detailedBox = document.getElementById('detailedBox');
+
+    function formatINR(n){return '₹'+Number(n).toLocaleString('en-IN')}
+
+    function simpleCalc(){
+      const monthly = Number(premiumInput.value);
+      const term = Number(termSelect.value);
+      const bonus = Number(bonusInput.value)/100;
+      const totalPaid = monthly * 12 * term;
+      // naive bonus-growth: maturity = totalPaid * (1 + bonus * term) + simple guaranteed 10% addition
+      const maturity = Math.round(totalPaid * (1 + bonus*term) * 1.08);
+      totalPaidEl.textContent = formatINR(totalPaid);
+      maturityEl.textContent = formatINR(maturity);
+      detailedBox.innerHTML = `Total paid: ${formatINR(totalPaid)}<br>Estimated bonus applied: ${Math.round(bonus*100*term)}% cumulatively<br>Projected maturity: ${formatINR(maturity)} (approx)`;
+    }
+
+    document.getElementById('calcBasic').addEventListener('click', simpleCalc);
+
+    document.getElementById('calcDetailed').addEventListener('click', ()=>{
+      const monthly = Number(premiumInput.value);
+      const term = Number(termSelect.value);
+      const bonus = Number(bonusInput.value)/100;
+      const totalPaid = monthly * 12 * term;
+
+      // Detailed year-by-year projection (simple model)
+      let acc = 0;
+      let breakdown = '<div style="text-align:left;max-height:160px;overflow:auto;padding-right:8px">';
+      for(let y=1;y<=term;y++){
+        const paidThisYear = monthly*12;
+        acc += paidThisYear;
+        // apply annual bonus on accumulated (simplified)
+        acc = acc * (1 + bonus);
+        breakdown += `<div style="padding:6px 0;border-bottom:1px dashed #eef">Year ${y}: Accumulated ≈ ${formatINR(Math.round(acc))}</div>`;
+        if(breakdown.length>20000) break;
+      }
+      breakdown += '</div>';
+      const final = Math.round(acc * 1.04); // small guaranteed addition
+      totalPaidEl.textContent = formatINR(totalPaid);
+      maturityEl.textContent = formatINR(final);
+      detailedBox.innerHTML = breakdown + `<div style="margin-top:8px;font-weight:700">Projected final: ${formatINR(final)}</div>`;
+    });
+
+    // Update shown values on range change
+    premiumInput.addEventListener('input', ()=>{document.getElementById('totalPaid').textContent='—';document.getElementById('maturity').textContent='—';document.getElementById('detailedBox').textContent='Adjust values and click calculate.'});
+
+    // Timer for limited-time offer (resets daily)
+    function startDailyCountdown(){
+      const display = document.createElement('div');
+      display.style.marginLeft='16px';display.style.color='#fff';display.style.fontWeight='700';
+      const sticky = document.querySelector('.sticky-inner');sticky.insertBefore(display,sticky.children[1]);
+      function update(){
+        const now = new Date();
+        const tomorrow = new Date(); tomorrow.setHours(23,59,59,999);
+        const diff = tomorrow - now;
+        const hrs = Math.floor(diff/36e5); const mins = Math.floor(diff/6e4)%60; const secs = Math.floor(diff/1000)%60;
+        display.textContent = `Free slots end in ${hrs}h ${mins}m ${secs}s`;
+      }
+      update();setInterval(update,1000);
+    }
+    startDailyCountdown();
+
+    // Small progressive enhancement: prefill whatsapp message if clicked (works via link param already)
+    document.getElementById('waBtn').addEventListener('click', ()=>{localStorage.setItem('seenAdvisorPopup','1')});
+
+    // Analytics / conversion hooks (placeholder: send to server via fetch when user contacts). Uncomment & set endpoint when available.
+    function recordLead(type){
+      try{
+        // fetch('/api/lead',{method:'POST',headers:{'content-type':'application/json'},body:JSON.stringify({type,type,ts:new Date()})});
+      }catch(e){console.log('lead not sent',e)}
+    }
+    document.getElementById('callBtn').addEventListener('click',()=>recordLead('call'));
+    document.getElementById('waBtn').addEventListener('click',()=>recordLead('whatsapp'));
+
+  </script>
+</body>
+</html>

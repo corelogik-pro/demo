@@ -1,0 +1,895 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1, maximum-scale=1" />
+  <title>Chandrakala Cheman Sahu — LIC Advisor (Premium & Conversion)</title>
+  <meta name="description" content="Chandrakala Cheman Sahu — LIC advisor in Raipur. Bilingual site (Hindi + English). Doorstep service, free consultation. Call/WhatsApp: 6261225135" />
+
+  <!-- Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&family=Noto+Sans+Devanagari:wght@400;700&display=swap" rel="stylesheet">
+
+  <!-- GSAP -->
+  <script src="https://unpkg.com/gsap@3/dist/gsap.min.js"></script>
+
+  <style>
+    :root {
+      --blue: #003b7a;
+      --blue2: #0077ff;
+      --gold: #ffd100;
+      --muted: #6b7280;
+      --bg: #f4f8ff;
+      --accent: #25d366;
+      --mobile-padding: 4vw;
+    }
+    
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+      -webkit-tap-highlight-color: transparent;
+    }
+    
+    html, body {
+      height: 100%;
+      font-family: 'Poppins', system-ui, Roboto, 'Noto Sans Devanagari', sans-serif;
+      background: var(--bg);
+      color: #0b2b44;
+      overflow-x: hidden;
+    }
+
+    /* TOP BANNER - Improved mobile spacing */
+    .top-banner {
+      position: sticky;
+      top: 0;
+      background: linear-gradient(90deg, var(--gold), #ffeaa0);
+      color: #062a46;
+      padding: 12px var(--mobile-padding);
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      align-items: center;
+      gap: 10px;
+      z-index: 1400;
+      font-size: clamp(12px, 3vw, 16px);
+    }
+    
+    .top-banner .claim {
+      background: var(--blue);
+      color: #fff;
+      padding: 8px 16px;
+      border-radius: 999px;
+      text-decoration: none;
+      font-weight: 700;
+      white-space: nowrap;
+      font-size: clamp(12px, 3vw, 14px);
+    }
+
+    /* HERO - Mobile-first layout */
+    .hero {
+      position: relative;
+      padding: 20px var(--mobile-padding);
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
+    }
+    
+    .hero-media {
+      width: 100%;
+      height: 35vh;
+      min-height: 220px;
+      border-radius: 12px;
+      overflow: hidden;
+      box-shadow: 0 10px 30px rgba(2, 6, 23, 0.12);
+    }
+    
+    .hero-media img,
+    .hero-media video {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+    }
+    
+    .hero-content {
+      width: 100%;
+      display: flex;
+      flex-direction: column;
+      gap: 16px;
+    }
+    
+    .hero-grid {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 16px;
+    }
+    
+    .hero-box {
+      background: #fff;
+      padding: 16px;
+      border-radius: 12px;
+      box-shadow: 0 8px 24px rgba(2, 6, 23, 0.08);
+    }
+    
+    .hero-title {
+      font-size: clamp(18px, 5vw, 22px);
+      margin: 0;
+      color: var(--blue);
+      font-weight: 700;
+      line-height: 1.3;
+    }
+    
+    .hero-sub {
+      color: var(--muted);
+      margin: 8px 0;
+      font-size: clamp(13px, 3.5vw, 16px);
+      line-height: 1.5;
+    }
+    
+    .cta-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin-top: 8px;
+    }
+    
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+      padding: 14px 20px;
+      border-radius: 999px;
+      text-decoration: none;
+      font-weight: 700;
+      font-size: clamp(14px, 4vw, 16px);
+      min-height: 48px;
+      min-width: 120px;
+      flex: 1;
+      text-align: center;
+      transition: transform 0.2s, opacity 0.2s;
+    }
+    
+    .btn:active {
+      transform: scale(0.98);
+      opacity: 0.9;
+    }
+    
+    .btn-call {
+      background: var(--blue);
+      color: #fff;
+    }
+    
+    .btn-ws {
+      background: var(--accent);
+      color: #fff;
+    }
+    
+    .btn-info {
+      background: #fff;
+      border: 2px solid rgba(8, 26, 48, 0.06);
+    }
+    
+    .cta-small {
+      font-size: clamp(11px, 3vw, 13px);
+      color: var(--muted);
+      margin-top: 8px;
+      line-height: 1.4;
+    }
+    
+    .trust-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      margin-top: 12px;
+    }
+    
+    .trust {
+      background: #fff;
+      padding: 8px 12px;
+      border-radius: 8px;
+      font-weight: 700;
+      font-size: clamp(11px, 3vw, 13px);
+      box-shadow: 0 4px 12px rgba(2, 6, 23, 0.06);
+      flex: 1;
+      min-width: 120px;
+      text-align: center;
+    }
+
+    /* PLANS - Mobile grid */
+    .container {
+      max-width: 1100px;
+      margin: 20px auto;
+      padding: 0 var(--mobile-padding);
+    }
+    
+    .plans {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 16px;
+      margin-top: 16px;
+    }
+    
+    .plan {
+      background: #fff;
+      padding: 16px;
+      border-radius: 12px;
+      box-shadow: 0 8px 24px rgba(2, 6, 23, 0.06);
+    }
+    
+    .plan.reco {
+      border: 2px solid var(--gold);
+    }
+
+    /* COMPARISON - Mobile scroll */
+    .compare {
+      margin-top: 16px;
+      background: #fff;
+      padding: 12px;
+      border-radius: 12px;
+      box-shadow: 0 8px 24px rgba(2, 6, 23, 0.06);
+      overflow-x: auto;
+    }
+    
+    table {
+      width: 100%;
+      min-width: 600px;
+      border-collapse: collapse;
+    }
+    
+    th, td {
+      padding: 12px;
+      border-bottom: 1px solid #f1f5f9;
+      text-align: left;
+      font-size: clamp(13px, 3vw, 15px);
+    }
+    
+    th {
+      background: #fbfdff;
+      font-weight: 700;
+    }
+
+    /* CALCULATOR - Stacked layout */
+    .calc {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 16px;
+      margin-top: 16px;
+    }
+    
+    input, select, button {
+      font-family: inherit;
+      font-size: clamp(15px, 4vw, 16px);
+    }
+    
+    .calc-output {
+      background: linear-gradient(180deg, #fff, #fbfdff);
+      padding: 16px;
+      border-radius: 10px;
+    }
+    
+    .field {
+      margin-bottom: 16px;
+    }
+    
+    .field label {
+      display: block;
+      margin-bottom: 8px;
+      font-size: clamp(14px, 3.5vw, 15px);
+    }
+    
+    .field input[type="range"] {
+      width: 100%;
+      height: 8px;
+    }
+    
+    .field input, .field select {
+      width: 100%;
+      padding: 12px;
+      border: 1px solid #e2e8f0;
+      border-radius: 8px;
+      background: #fff;
+    }
+
+    /* TESTIMONIALS - Better mobile cards */
+    .testimonials {
+      display: flex;
+      gap: 12px;
+      overflow-x: auto;
+      margin-top: 16px;
+      padding-bottom: 16px;
+      -webkit-overflow-scrolling: touch;
+    }
+    
+    .tcard {
+      min-width: 280px;
+      background: #fff;
+      padding: 16px;
+      border-radius: 12px;
+      box-shadow: 0 6px 18px rgba(2, 6, 23, 0.06);
+      flex-shrink: 0;
+    }
+    
+    .tcard strong {
+      font-size: clamp(16px, 4vw, 18px);
+    }
+    
+    .tcard .muted {
+      font-size: clamp(14px, 3.5vw, 15px);
+      margin-top: 8px;
+    }
+
+    /* CONTACT BAR - Fixed bottom */
+.sticky {
+  position: fixed;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  display: flex;
+  justify-content: center;
+  z-index: 9999; /* Higher to stay on top */
+  padding: 10px;
+  background: rgba(255, 255, 255, 0.95);
+  box-shadow: 0 -2px 10px rgba(0, 0, 0, 0.1);
+}
+
+.sticky-inner {
+  background: linear-gradient(90deg, #007BFF, #0056b3); /* fallback colors */
+  color: #fff;
+  padding: 12px 20px;
+  border-radius: 999px;
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  box-shadow: 0 6px 24px rgba(2, 6, 23, 0.18);
+  max-width: 90%;
+  width: 500px;
+  justify-content: center;
+}
+
+.sticky-inner a {
+  color: #fff;
+  text-decoration: none;
+  font-weight: 700;
+  font-size: clamp(14px, 4vw, 16px);
+  padding: 8px 12px;
+  white-space: nowrap;
+  border-radius: 6px;
+  transition: background 0.3s;
+}
+
+.sticky-inner a:hover {
+  background: rgba(255, 255, 255, 0.2);
+}
+
+    /* POPUP - Mobile centering */
+    .popup {
+      position: fixed;
+      inset: 0;
+      background: rgba(3, 9, 23, 0.6);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      z-index: 1400;
+      padding: 16px;
+    }
+    
+    .popup-card {
+      background: #fff;
+      padding: 20px;
+      border-radius: 12px;
+      max-width: 460px;
+      width: 100%;
+      box-shadow: 0 12px 40px rgba(2, 6, 23, 0.2);
+    }
+
+    /* MICRO QUIZ - Mobile buttons */
+    .quiz {
+      display: flex;
+      gap: 8px;
+      flex-direction: column;
+    }
+    
+    .quiz button {
+      padding: 14px;
+      border-radius: 8px;
+      border: 1px solid #eef;
+      background: #fff;
+      font-size: clamp(14px, 4vw, 15px);
+      cursor: pointer;
+      transition: background 0.2s;
+      text-align: left;
+    }
+    
+    .quiz button:active {
+      background: #f8fafc;
+    }
+
+    /* FORM - Mobile optimization */
+    form {
+      background: #fff;
+      padding: 16px;
+      border-radius: 12px;
+      box-shadow: 0 8px 24px rgba(2, 6, 23, 0.06);
+      width: 100%;
+    }
+    
+    form label {
+      display: block;
+      margin-bottom: 6px;
+      font-size: clamp(14px, 3.5vw, 15px);
+    }
+    
+    form input, form select {
+      width: 100%;
+      padding: 14px;
+      border: 1px solid #e2e8f0;
+      border-radius: 8px;
+      margin-bottom: 16px;
+      font-size: clamp(15px, 4vw, 16px);
+    }
+    
+    form button {
+      width: 100%;
+      padding: 16px;
+    }
+
+    /* UTILITY CLASSES */
+    .muted {
+      color: var(--muted);
+      font-size: clamp(13px, 3.5vw, 14px);
+    }
+    
+    h1, h2, h3 {
+      font-size: clamp(18px, 5vw, 22px);
+      margin-bottom: 12px;
+    }
+
+    /* Tablet and Desktop Layouts */
+    @media (min-width: 768px) {
+      :root {
+        --mobile-padding: 5%;
+      }
+      
+      .hero {
+        flex-direction: row;
+        min-height: 60vh;
+        padding: 30px var(--mobile-padding);
+        align-items: center;
+      }
+      
+      .hero-media {
+        flex: 0 0 45%;
+        max-width: 500px;
+        height: auto;
+      }
+      
+      .hero-grid {
+        grid-template-columns: 1fr 1fr;
+      }
+      
+      .plans {
+        grid-template-columns: repeat(3, 1fr);
+      }
+      
+      .calc {
+        grid-template-columns: 1fr 1fr;
+      }
+      
+      .sticky {
+        padding: 16px;
+      }
+      
+      .sticky-inner {
+        max-width: 600px;
+      }
+      
+      #contact > div {
+        display: flex;
+        gap: 20px;
+      }
+      
+      #contact > div > div,
+      #contact > div > form {
+        flex: 1;
+      }
+    }
+
+    /* Large Desktop */
+    @media (min-width: 1200px) {
+      :root {
+        --mobile-padding: 8%;
+      }
+      
+      .container {
+        padding: 0 5%;
+      }
+    }
+
+    /* Very small screens */
+    @media (max-width: 360px) {
+      .btn {
+        padding: 12px 10px;
+        min-width: 100px;
+        font-size: 13px;
+      }
+      
+      .sticky-inner a {
+        padding: 6px 10px;
+      }
+      
+      .hero-media {
+        min-height: 180px;
+      }
+    }
+    @media (max-width: 480px) {
+  .sticky-inner {
+    flex-direction: column;
+    border-radius: 20px; /* less extreme on mobile */
+    padding: 12px;
+  }
+  .sticky-inner span {
+    margin-bottom: 8px;
+    white-space: normal; /* allow proper wrapping */
+  }
+}
+  </style>
+</head>
+<body>
+
+  <!-- Top urgency banner with clear benefit -->
+  <div class="top-banner" role="region" aria-label="limited-offer">
+    <div style="display:flex;flex-direction:column">
+      <div style="font-weight:800">🎁 Free 15‑min Consultation — Limited slots daily</div>
+      <div class="cta-small">Book today and get a free LIC plan brochure (Hindi/English)</div>
+    </div>
+    <div style="display:flex;align-items:center;gap:8px">
+      <div id="topCountdown" style="font-weight:800;color:#062a46"></div>
+      <a class="claim" href="#contact">Claim Now</a>
+    </div>
+  </div>
+
+  <!-- HERO: left = content, right = media (video/photo) -->
+  <header class="hero" aria-label="hero">
+    <div class="hero-media" aria-hidden="true">
+      <!-- Motivational, professional Indian insurance advisor image -->
+      <img src="https://images.unsplash.com/photo-1521791136064-7986c2920216?auto=format&fit=crop&w=800&q=80"
+           alt="Professional Indian insurance advisor confidently guiding a family" />
+    </div>
+
+    <div class="hero-content">
+      <div class="hero-grid">
+        <!-- English box -->
+        <div class="hero-box" id="en-box">
+          <div class="lang">English</div>
+          <h1 class="hero-title">Secure Your Family's Future Today</h1>
+          <p class="hero-sub">Trusted LIC advisor — Doorstep service in Raipur and nearby areas. First-time visitors get a free 15‑min consultation.</p>
+
+          <div class="cta-row">
+            <a id="wsEn" class="btn btn-ws" href="https://wa.me/916261225135?text=Hello%2C%20I%20want%20a%20free%20LIC%20consultation" target="_blank">💬 WhatsApp Now</a>
+            <a id="callEn" class="btn btn-call" href="tel:+916261225135">📞 Call 6261225135</a>
+            <a class="btn btn-info" href="#calculator">📊 Calculator</a>
+          </div>
+
+          <div class="trust-row">
+            <div class="trust">IRDA Certified</div>
+            <div class="trust">10+ Years Experience</div>
+            <div class="trust">100+ Happy Families</div>
+          </div>
+
+          <div style="margin-top:10px;" class="cta-small">Service areas: Sejbahar, Mujgahan, Dunda, Datrenga, Dhaneli</div>
+        </div>
+
+        <!-- Hindi box -->
+        <div class="hero-box" id="hi-box">
+          <div class="lang">हिन्दी</div>
+          <h1 class="hero-title">आज ही अपने परिवार का भविष्य सुरक्षित करें</h1>
+          <p class="hero-sub">विश्वसनीय LIC सलाहकार — रायपुर एवं आस‑पास घर पर सेवा। पहले विज़िट पर 15‑मिनट निःशुल्क परामर्श।</p>
+
+          <div class="cta-row">
+            <a id="wsHi" class="btn btn-ws" href="https://wa.me/916261225135?text=%E0%A4%A8%E0%A4%AE%E0%A4%B8%E0%A5%8D%E0%A4%A4%E0%A5%87%21%20%E0%A4%AE%E0%A4%88%20LIC%20%E0%A4%AF%E0%A4%BE%20%E0%A4%9C%E0%A4%BE%E0%A4%A8%E0%A4%95%E0%A4%BE%20%E0%A4%AE%E0%A4%82%E0%A4%97%E0%A4%BE%20%E0%A4%B9%E0%A5%81%E0%A4%82%3F" target="_blank">💬 अभी WhatsApp करें</a>
+            <a id="callHi" class="btn btn-call" href="tel:+916261225135">📞 कॉल करें</a>
+            <a class="btn btn-info" href="#calculator">📊 कैलकुलेटर</a>
+          </div>
+
+          <div class="trust-row">
+            <div class="trust">LIC प्राधिकृत</div>
+            <div class="trust">10+ वर्षों का अनुभव</div>
+            <div class="trust">100+ संतुष्ट परिवार</div>
+          </div>
+
+          <div style="margin-top:10px;" class="cta-small">सेवा क्षेत्र: Sejbahar, Mujgahan, Dunda, Datrenga, Dhaneli</div>
+        </div>
+      </div>
+
+      <!-- Micro-quiz to capture intent -->
+      <div style="margin-top:14px" class="hero-box">
+        <div style="display:flex;justify-content:space-between;align-items:center">
+          <strong>Quick Help — क्या आप किसके लिए योजना ढूँढ रहे हैं?</strong>
+          <div class="muted">Choose & we'll guide you</div>
+        </div>
+        <div class="quiz" style="margin-top:10px">
+          <div style="display:flex;gap:8px;flex-wrap:wrap">
+            <button onclick="quizPick('Investment')">Investment / निवेश</button>
+            <button onclick="quizPick('Protection')">Protection / सुरक्षा</button>
+            <button onclick="quizPick('Child')">Child Education / बच्चों के लिए</button>
+            <button onclick="quizPick('Retirement')">Retirement / सेवानिवृत्ति</button>
+          </div>
+          <div id="quizMsg" style="margin-top:10px;color:var(--muted)"></div>
+        </div>
+      </div>
+
+    </div>
+  </header>
+
+  <!-- MAIN -->
+  <main>
+    <div class="container">
+      <!-- PLANS -->
+      <section aria-label="plans">
+        <div style="display:flex;justify-content:space-between;align-items:center">
+          <h2>Popular Plans / लोकप्रिय योजनाएँ</h2>
+          <div class="muted">Select a plan to get an instant personalized quote on WhatsApp</div>
+        </div>
+
+        <div class="plans">
+          <div class="plan">
+            <div style="font-weight:700">LIC Jeevan Anand<br><span class="muted">LIC जीवन आनंद</span></div>
+            <div style="margin-top:8px" class="muted">Lifetime cover + maturity benefit</div>
+            <div style="margin-top:12px;font-weight:800">₹500 / month</div>
+            <div style="margin-top:12px;display:flex;gap:8px">
+              <a class="btn btn-ws" href="https://wa.me/916261225135?text=I%20am%20interested%20in%20LIC%20Jeevan%20Anand" target="_blank">💬 WhatsApp</a>
+              <a class="btn btn-call" href="tel:+916261225135">📞 Call</a>
+            </div>
+          </div>
+
+          <div class="plan reco">
+            <div style="font-weight:700">LIC New Endowment<br><span class="muted">नई एंडॉवमेंट योजना</span></div>
+            <div style="margin-top:8px" class="muted">Guaranteed returns + life cover</div>
+            <div style="margin-top:12px;font-weight:800">₹400 / month</div>
+            <div style="margin-top:12px;display:flex;gap:8px">
+              <a class="btn btn-ws" href="https://wa.me/916261225135?text=I%20want%20details%20about%20New%20Endowment" target="_blank">💬 WhatsApp</a>
+              <a class="btn btn-call" href="tel:+916261225135">📞 Call</a>
+            </div>
+          </div>
+
+          <div class="plan">
+            <div style="font-weight:700">LIC Tech Term<br><span class="muted">LIC टेक टर्म</span></div>
+            <div style="margin-top:8px" class="muted">High cover at low premium</div>
+            <div style="margin-top:12px;font-weight:800">₹300 / month</div>
+            <div style="margin-top:12px;display:flex;gap:8px">
+              <a class="btn btn-ws" href="https://wa.me/916261225135?text=Interested%20in%20Tech%20Term" target="_blank">💬 WhatsApp</a>
+              <a class="btn btn-call" href="tel:+916261225135">📞 Call</a>
+            </div>
+          </div>
+        </div>
+
+        <!-- Comparison table -->
+        <div class="compare">
+          <h3 class="muted">Compare Plans / योजनाओं की तुलना</h3>
+          <table aria-label="plan-comparison">
+            <thead>
+              <tr><th>Plan / योजना</th><th>Benefits / लाभ</th><th>Best For / किसके लिए</th><th>Start / शुरू</th><th>Action / कार्यवाही</th></tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>LIC Jeevan Anand / जीवन आनंद</td>
+                <td>Lifetime cover + maturity benefit</td>
+                <td>Family protection / परिवार</td>
+                <td>₹500/mo</td>
+                <td><a class="btn btn-ws" href="https://wa.me/916261225135?text=Tell%20me%20about%20Jeevan%20Anand">WhatsApp</a></td>
+              </tr>
+              <tr>
+                <td>LIC New Endowment / नई एंडॉवमेंट</td>
+                <td>Guaranteed returns + life cover</td>
+                <td>Secure saving / सुरक्षित बचत</td>
+                <td>₹400/mo</td>
+                <td><a class="btn btn-ws" href="https://wa.me/916261225135?text=Tell%20me%20about%20New%20Endowment">WhatsApp</a></td>
+              </tr>
+              <tr>
+                <td>LIC Tech Term / टेक टर्म</td>
+                <td>High cover, low premium</td>
+                <td>Pure protection / शुद्ध सुरक्षा</td>
+                <td>₹300/mo</td>
+                <td><a class="btn btn-ws" href="https://wa.me/916261225135?text=Tell%20me%20about%20Tech%20Term">WhatsApp</a></td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+
+      </section>
+
+      <!-- CALCULATOR -->
+      <section id="calculator">
+        <h2 style="margin-top:18px">LIC Benefit Calculator / कैलकुलेटर</h2>
+        <div class="calc">
+          <div>
+            <div class="field"><label class="muted">Monthly Premium (₹) / मासिक प्रीमियम</label>
+              <input id="premium" type="range" min="100" max="50000" value="3000"> 
+              <p id="nk">100</p>
+            </div>
+
+            <div class="field"><label class="muted">Policy Term (years) / अवधि (वर्ष)</label>
+              <select id="term"><option value="10">10</option><option value="15">15</option><option value="20" selected>20</option><option value="25">25</option></select></div>
+
+            <div class="field"><label class="muted">Expected Annual Bonus (%) / अनुमानित बोनस (%)</label>
+              <input id="bonus" type="number" min="0" max="12" value="4"></div>
+
+            <div style="display:flex;gap:8px"><button id="btnBasic" class="btn btn-call">Calculate Basic</button><button id="btnDetailed" class="btn btn-info">Detailed View</button></div>
+          </div>
+
+          <div>
+            <div class="calc-output">
+              <div class="muted">Total Paid / कुल भुगतान</div>
+              <div id="totalPaid" style="font-weight:800;font-size:18px;margin-top:6px">—</div>
+              <div style="height:8px"></div>
+              <div class="muted">Estimated Maturity / अनुमानित परिपक्वता</div>
+              <div id="maturity" style="font-weight:800;font-size:18px;margin-top:6px">—</div>
+            </div>
+
+            <div style="margin-top:12px;background:#fff;padding:10px;border-radius:10px;box-shadow:0 8px 18px rgba(2,6,23,0.04)">
+              <div style="font-weight:700">Detailed Breakdown / विस्तृत विवरण</div>
+              <div id="detailed" style="font-size:13px;color:var(--muted);margin-top:8px;max-height:200px;overflow:auto">No calculation yet / अभी तक कोई गणना नहीं</div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- TESTIMONIALS -->
+      <section>
+        <h2 style="margin-top:18px">What Clients Say / ग्राहक क्या कहते हैं</h2>
+        <div class="testimonials">
+          <div class="tcard"><strong>Ramesh S.</strong><div class="muted" style="margin-top:6px">"Everything was handled at home. Very helpful and clear."</div></div>
+          <div class="tcard"><strong>रमेश एस.</strong><div class="muted" style="margin-top:6px">"घर पर पूरा मार्गदर्शन मिला। बहुत सहयोगी।"</div></div>
+          <div class="tcard"><strong>Neha P.</strong><div class="muted" style="margin-top:6px">"Quick response and patient advisor."</div></div>
+        </div>
+      </section>
+
+      <!-- CONTACT & LEAD FORM -->
+      <section id="contact" style="margin-top:18px">
+        <div style="display:flex;gap:16px;flex-wrap:wrap">
+          <div style="flex:1 1 360px;background:#fff;padding:16px;border-radius:12px;box-shadow:0 8px 24px rgba(2,6,23,0.06)">
+            <h3>Contact / संपर्क करें</h3>
+            <p class="muted">Call or WhatsApp — we'll schedule a free consultation and send a brochure in your language.</p>
+            <div style="display:flex;gap:8px;margin-top:10px">
+              <a class="btn btn-ws" href="https://wa.me/916261225135?text=Hello%2C%20I%20need%20help%20with%20LIC%20plans" target="_blank">💬 WhatsApp</a>
+              <a class="btn btn-call" href="tel:+916261225135">📞 Call</a>
+            </div>
+
+            <div style="margin-top:12px;font-size:13px;color:var(--muted)">
+              Serving: Sejbahar, Mujgahan, Dunda, Datrenga, Dhaneli • Doorstep service available
+            </div>
+          </div>
+
+          <form id="leadForm" style="flex:1 1 300px;background:#fff;padding:16px;border-radius:12px;box-shadow:0 8px 24px rgba(2,6,23,0.06)">
+            <h3>Request a Callback / कॉल अनुरोध</h3>
+            <label class="muted">Name / नाम</label>
+            <input id="leadName" type="text" placeholder="Your name / आपका नाम" style="width:100%;padding:10px;border-radius:8px;border:1px solid #eef;margin-bottom:8px">
+            <label class="muted">Mobile / मोबाइल</label>
+            <input id="leadPhone" type="tel" placeholder="6261225135" style="width:100%;padding:10px;border-radius:8px;border:1px solid #eef;margin-bottom:8px">
+            <label class="muted">Interested Plan / रुचि</label>
+            <select id="leadPlan" style="width:100%;padding:10px;border-radius:8px;border:1px solid #eef;margin-bottom:8px">
+              <option value="">Any / कोई भी</option>
+              <option value="Jeevan Anand">Jeevan Anand</option>
+              <option value="New Endowment">New Endowment</option>
+              <option value="Tech Term">Tech Term</option>
+            </select>
+            <button type="button" id="sendLead" class="btn btn-ws" style="width:100%">Request Callback / अनुरोध भेजें</button>
+            <div id="leadMsg" style="margin-top:10px;font-size:13px;color:var(--muted)"></div>
+          </form>
+        </div>
+      </section>
+
+    </div>
+  </main>
+
+  <!-- STICKY CONTACT -->
+ <div class="sticky">
+  <div class="sticky-inner">
+    <span style="font-weight:800">Free Consultation — Claim Today</span>
+    <a href="tel:+916261225135">📞 Call</a>
+    <a href="https://wa.me/916261225135?text=Hello%2C%20I%20want%20a%20free%20consultation" target="_blank">💬 WhatsApp</a>
+  </div>
+</div>
+
+
+  <!-- FIRST VISIT POPUP (enhanced) -->
+  <div id="firstPopup" class="popup" style="display:none">
+    <div class="popup-card">
+      <div style="display:flex;justify-content:space-between;align-items:center">
+        <div>
+          <div style="font-weight:800;font-size:18px">Free 15‑min LIC Consultation</div>
+          <div class="muted" style="margin-top:6px">Get personalised plan suggestions and a free brochure in Hindi or English.</div>
+          <ul style="margin-top:8px;color:var(--muted)">
+            <li>Doorstep service • Zero pressure advice</li>
+            <li>100+ satisfied families in Raipur</li>
+            <li>IRDA certified advisor</li>
+          </ul>
+        </div>
+        <div style="display:flex;flex-direction:column;gap:8px;align-items:flex-end">
+          <a class="btn btn-ws" href="https://wa.me/916261225135?text=Hello%2C%20I%20want%20a%20free%20LIC%20consultation" target="_blank">💬 WhatsApp Now</a>
+          <a class="btn btn-call" href="tel:+916261225135">📞 Call</a>
+          <a href="#" id="popupNoThanks" style="font-size:13px;color:var(--muted);margin-top:6px">No thanks</a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    function showNk(){
+      const x = document.getElementById('premium').value;
+      document.getElementById('nk').innerHTML = formatINR(x);
+    }
+    window.addEventListener('load',()=>{document.getElementById('nk').innerHTML = formatINR(document.getElementById('premium').value)});
+    
+    document.getElementById('premium').addEventListener('click',showNk);
+    // Settings
+    const WA_NUMBER = '916261225135';
+
+    // Countdown for top banner (end of day)
+    function startTopCountdown(){
+      const el = document.getElementById('topCountdown');
+      function update(){
+        const now = new Date();
+        const end = new Date(); end.setHours(23,59,59,999);
+        const diff = end - now; if(diff<=0){ el.textContent='Ends today' ; return }
+        const hrs = Math.floor(diff/36e5); const mins = Math.floor(diff/6e4)%60; const secs = Math.floor(diff/1000)%60;
+        el.textContent = `${hrs}h ${mins}m ${secs}s`;
+      }
+      update(); setInterval(update,1000);
+    }
+    startTopCountdown();
+
+    // GSAP entrance
+    window.addEventListener('load', ()=>{ gsap.from('.hero-box',{opacity:0,y:20,duration:0.8,stagger:0.12}); gsap.from('.plan',{opacity:0,y:20,duration:0.8,stagger:0.12}); document.getElementById('nk').innerHTML = formatINR(document.getElementById('premium')); });
+
+    // First-visit popup logic (show once)
+    const popup = document.getElementById('firstPopup');
+    if(!localStorage.getItem('seenFirstPopup')){ setTimeout(()=>{ popup.style.display='flex' },900) }
+    document.getElementById('popupNoThanks').addEventListener('click', (e)=>{ e.preventDefault(); popup.style.display='none'; localStorage.setItem('seenFirstPopup','1') });
+
+    // Exit-intent
+    let exitShown=false; document.addEventListener('mouseout', function(e){ if(e.clientY<10 && !exitShown && !localStorage.getItem('seenFirstPopup')){ popup.style.display='flex'; exitShown=true } });
+
+    // Micro-quiz: send prefilled WA to advisor & show message
+    function quizPick(topic){ const q = topic || 'General'; document.getElementById('quizMsg').textContent = 'Thanks — opening WhatsApp to connect you with best options...'; window.open(`https://wa.me/${WA_NUMBER}?text=${encodeURIComponent('I am looking for: '+q)}`, '_blank'); localStorage.setItem('seenFirstPopup','1'); }
+    window.quizPick = quizPick;
+
+    // Testimonials scroll simple autoplay
+    (function(){ const t = document.querySelector('.testimonials'); let i=0; setInterval(()=>{ i=(i+1)%3; t.scrollTo({left:i*280,behavior:'smooth'}); },3500); })();
+
+    // Calculator logic
+    const premium = document.getElementById('premium'); const term = document.getElementById('term'); const bonus = document.getElementById('bonus');
+    const totalPaidEl = document.getElementById('totalPaid'); const maturityEl = document.getElementById('maturity'); const detailedEl = document.getElementById('detailed');
+
+    function formatINR(n){ return '₹'+Number(n).toLocaleString('en-IN'); }
+    function basicCalc(){ const monthly = Number(premium.value); const yrs = Number(term.value); const b = Number(bonus.value)/100; const paid = monthly*12*yrs; const maturity = Math.round(paid*(1+b*yrs)*1.06); totalPaidEl.textContent = formatINR(paid); maturityEl.textContent = formatINR(maturity); detailedEl.innerHTML = `Total paid: ${formatINR(paid)}<br>Estimated bonus applied: ${(b*100*yrs).toFixed(1)}%<br>Projected maturity (approx): ${formatINR(maturity)}`; }
+    document.getElementById('btnBasic').addEventListener('click', basicCalc);
+
+    document.getElementById('btnDetailed').addEventListener('click', ()=>{ const monthly = Number(premium.value); const yrs = Number(term.value); const b = Number(bonus.value)/100; const paidYear = monthly*12; let acc=0; let html=''; for(let y=1;y<=yrs;y++){ acc += paidYear; acc = acc*(1+b); html += `<div style="padding:6px 0;border-bottom:1px dashed #eef">Year ${y}: Accumulated ≈ ${formatINR(Math.round(acc))}</div>`; } const final = Math.round(acc*1.03); totalPaidEl.textContent = formatINR(monthly*12*yrs); maturityEl.textContent = formatINR(final); detailedEl.innerHTML = html + `<div style="margin-top:8px;font-weight:700">Projected final: ${formatINR(final)}</div>`; });
+
+    // Lead form: validate and open WhatsApp to send lead to advisor, show confirmation
+    document.getElementById('sendLead').addEventListener('click', ()=>{
+      const name = document.getElementById('leadName').value.trim(); const phone = document.getElementById('leadPhone').value.trim(); const plan = document.getElementById('leadPlan').value || 'Any'; const msgEl = document.getElementById('leadMsg');
+      if(!phone){ msgEl.textContent = 'Please enter mobile number / कृपया मोबाइल नंबर दर्ज करें'; return }
+      const text = `Lead from website - Name: ${name || 'N/A'}, Phone: ${phone}, Interested: ${plan}`;
+      // open whatsapp to advisor so advisor receives the lead immediately
+      window.open(`https://wa.me/${WA_NUMBER}?text=${encodeURIComponent(text)}`, '_blank');
+      msgEl.textContent = 'Thank you — we will contact you shortly / धन्यवाद — हम जल्द संपर्क करेंगे';
+      // store short lead record in localStorage for offline later sync
+      try{ const leads = JSON.parse(localStorage.getItem('siteLeads')||'[]'); leads.push({name,phone,plan,ts:new Date().toISOString()}); localStorage.setItem('siteLeads',JSON.stringify(leads)); }catch(e){console.log('lead save err',e)}
+    });
+
+    // Accessibility: ESC closes popup
+    document.addEventListener('keydown',(e)=>{ if(e.key==='Escape'){ popup.style.display='none'; localStorage.setItem('seenFirstPopup','1') } });
+
+    // Mobile: ensure sticky bar small & not blocking
+    function adjustSticky(){ if(window.innerWidth<560){ document.querySelector('.sticky-inner').style.padding='8px 10px'; } }
+    window.addEventListener('resize', adjustSticky); adjustSticky();
+
+    // Note for deploy: replace video src with your hosted file for reliability; integrate server API for lead saving
+    console.log('Conversion-optimized page loaded. Replace video & images with production assets and configure lead endpoint.');
+  </script>
+</body>
+</html>
+</html>
